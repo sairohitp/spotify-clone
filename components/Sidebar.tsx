@@ -11,6 +11,9 @@ import { useMemo } from "react"
 
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+
+// Components in the same folder use the standard pathname
+import Box from "./Box";
 interface SidebarProps {
     children: React.ReactNode;
 }

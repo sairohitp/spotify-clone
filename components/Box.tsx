@@ -8,6 +8,7 @@ const Box: React.FC<BoxProps> = ({
     className
 }) => {
     return ( 
+        // npm i tailwind-merge
         <div>
             {children}
         </div>
