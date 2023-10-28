@@ -14,6 +14,7 @@ import { BiSearch } from "react-icons/bi";
 
 // Components in the same folder use the standard pathname
 import Box from "./Box";
+import SidebarItem from "./SidebarItem";
 interface SidebarProps {
     children: React.ReactNode;
 }
@@ -60,9 +61,32 @@ const Sidebar: React.FC<SidebarProps> = (
                 "
             >
                 <Box>
-                    Sidebar Navigation
+                    <div
+                        className="
+                            flex
+                            flex-col
+                            gap-y-4
+                            px-5
+                            py-4
+                        "
+                    >
+                        {routes.map((item) => (
+                            <SidebarItem
+                                key = {item.label}
+                                {...item}
+                            />
+                        ))}
+                    </div>
                 </Box>
-                <Box>
+
+                {/* Since the box component is using twMerge, we can pass classNames from here directly that flow down to the child and override them */}
+
+                <Box
+                    className="
+                        overflow-y-auto
+                        h-full
+                    "
+                >
                     Song Library
                 </Box>
             </div>
