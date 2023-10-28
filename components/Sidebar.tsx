@@ -44,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = (
 
     return(
         <div>
-            {children}
+            Sidebar
         </div>
     )
 }
