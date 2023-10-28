@@ -19,9 +19,9 @@ interface SidebarProps {
     children: React.ReactNode;
 }
 
-const Sidebar: React.FC<SidebarProps> = (
-    {children
-    }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+    children
+}) => {
 
     // usePathname is a Client Component hook that lets you read the current URL's pathname.
     // usePathname intentionally requires using a Client Component. 
