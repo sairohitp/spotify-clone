@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = (
 
     const pathname = usePathname();
 
-    // array of possible routes in out application
+    // array of possible routes in our application
     
     const routes = useMemo(() => [
         {
@@ -43,8 +43,23 @@ const Sidebar: React.FC<SidebarProps> = (
     ], [pathname]);
 
     return(
-        <div>
-            Sidebar
+        <div className="flex h-full">
+            <div
+                className="
+                    hidden
+                    md:flex
+                    flex-col
+                    gap-y-2
+                    bg-black
+                    h-full
+                    w-[300px]
+                    p-2
+                "
+            >
+                <Box>
+                    Sidebar Navigation
+                </Box>
+            </div>
         </div>
     )
 }
