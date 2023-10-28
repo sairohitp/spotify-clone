@@ -5,7 +5,12 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useMemo } from "react"
 
+// importing react icons
+
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
 interface SidebarProps {
     children: React.ReactNode;
 }
@@ -18,7 +23,24 @@ const Sidebar: React.FC<SidebarProps> = (
     // usePathname intentionally requires using a Client Component. 
     // It's important to note Client Components are not a de-optimization.
 
-    const path = usePathname();
+    const pathname = usePathname();
+
+    // array of possible routes in out application
+    
+    const routes = useMemo(() => [
+        {
+            icon: HiHome,
+            label: "Home",
+            active: pathname !== "/search",
+            href: "/"
+        },
+        {
+            icon: BiSearch,
+            label: "Search",
+            active: pathname === "/search",
+            href: "/search"
+        }
+    ], [pathname]);
 
     return(
         <div>
