@@ -1,4 +1,6 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
     children: React.ReactNode
@@ -11,6 +13,10 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
     const router = useRouter();
     
+    const handleLogout = () => {
+        // Handle logout
+    }
+
     return ( 
         <div>
             {children}
