@@ -9,7 +9,7 @@ const Button = forwardRef <HTMLButtonElement, ButtonProps> (({
     disabled,
     type = "button",
     ...props
-}, refs) => {
+}, ref) => {
     return (
         <button
             type = {type}
@@ -29,6 +29,9 @@ const Button = forwardRef <HTMLButtonElement, ButtonProps> (({
                 transition
             `,  className
             )}
+            disabled = {disabled}
+            ref = {ref}
+            {...props}
         >
             {children}
         </button>
