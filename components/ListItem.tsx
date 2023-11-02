@@ -13,7 +13,11 @@ const ListItem: React.FC<ListItemProps> = ({
     name,
     href
 }) => {
-    const router = useRouter
+    const router = useRouter();
+    const onClick = () => {
+        // Add authentication before push
+        router.push(href)
+    }
     return ( 
         <div>
             List Item
