@@ -106,7 +106,9 @@ const Header: React.FC<HeaderProps> = ({
             ">
                 <>
                     <div>
-                        <Button />
+                        <Button>
+                            Sign up
+                        </Button>
                     </div>
                 </>
             </div>
