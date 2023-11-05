@@ -44,6 +44,9 @@ export default function Home() {
             Newest songs
           </h1>
         </div>
+        <div>
+          List of songs
+        </div>
       </div>
     </div>
   )
