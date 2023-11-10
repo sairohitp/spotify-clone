@@ -14,3 +14,12 @@ create table users {
     payment_method jsonb
 };
 
+alter table users
+    enable row level security;
+
+create policy "Can view own user data." on users
+    for select using (auth.uid() = id);
+
+create policy "Can update own user data." on users
+    for update using (auth.uid() = id);
+    
