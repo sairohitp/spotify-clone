@@ -22,4 +22,5 @@ create policy "Can view own user data." on users
 
 create policy "Can update own user data." on users
     for update using (auth.uid() = id);
-    
+
+/** This trigger automatically creates 
