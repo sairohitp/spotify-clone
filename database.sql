@@ -146,10 +146,7 @@ create table subscriptions (
   trial_start timestamp with time zone default timezone('utc'::text, now()),
   -- If the subscription has a trial, the end of that trial.
   trial_end timestamp with time zone default timezone('utc'::text, now())
-);
-
-
-alter table subscriptions
+); alter table subscriptions
   enable row level security;
 create policy "Can only view own subs data." on subscriptions
   for select using (auth.uid() = user_id);
